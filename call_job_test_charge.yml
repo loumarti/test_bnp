@@ -1,0 +1,22 @@
+- name: play to call multiple job template with tower api
+  hosts: localhost
+  gather_facts: no
+  
+  vars_files:
+    - tower_creds.yml
+
+  vars:
+    tower_url: "https://15.237.107.131/"
+    job_count: 10
+    job_name: "run_demo_play"
+
+  tasks:
+    - name: Launch a job
+      tower_job_launch:
+        validate_certs: no
+        name: "{{ job_name }}"
+        tower_username: "{{ tower_user }}"
+        tower_password: "{{ tower_password }}"
+        tower_host: "{{ tower_url }}"
+      loop: "{{ range(1, {{ job_count }})|list }}"
+
