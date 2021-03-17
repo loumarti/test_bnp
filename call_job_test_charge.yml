@@ -12,7 +12,7 @@
 
   tasks:
     - name: Launch a job
-      tower_job_launch:
+      ansible.awx.tower_job_launch:
         validate_certs: no
         job_template: "{{ job_name }}"
         tower_username: "{{ tower_user }}"
