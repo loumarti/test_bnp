@@ -18,5 +18,5 @@
         tower_username: "{{ tower_user }}"
         tower_password: "{{ tower_password }}"
         tower_host: "{{ tower_url }}"
-      loop: "{{ range(1, {{ job_count }})|list }}"
+      loop: "{{ range(1, job_count )|list }}"
 
