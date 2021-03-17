@@ -14,7 +14,7 @@
     - name: Launch a job
       tower_job_launch:
         validate_certs: no
-        name: "{{ job_name }}"
+        job_template: "{{ job_name }}"
         tower_username: "{{ tower_user }}"
         tower_password: "{{ tower_password }}"
         tower_host: "{{ tower_url }}"
