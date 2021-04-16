@@ -1,0 +1,11 @@
+---
+- name: Using Podman collection
+  hosts: all
+  tasks:
+    - name: Run redis container
+      containers.podman.podman_container:
+        name: myredis
+        image: redis
+        command: redis-server --appendonly yes
+        state: present
+        recreate: yes
