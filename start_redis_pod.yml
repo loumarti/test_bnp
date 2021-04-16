@@ -1,6 +1,7 @@
 ---
 - name: Using Podman collection
   hosts: all
+  gather_facts: no
   tasks:
     - name: Run redis container
       containers.podman.podman_container:
